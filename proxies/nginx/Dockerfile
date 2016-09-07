@@ -1,10 +1,10 @@
 FROM nginx
 
 COPY ./nginx.conf.template /
-COPY ./entrypoint.sh /
+COPY ./startup.sh /
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /startup.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/startup.sh"]
 
 EXPOSE 8080

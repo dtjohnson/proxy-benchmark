@@ -3,6 +3,7 @@
 : "${UPSTREAM_HOST:?You must set the UPSTREAM_HOST environmental variable}"
 : "${UPSTREAM_PORT:?You must set the UPSTREAM_PORT environmental variable}"
 
-envsubst < /nginx.conf.template > /etc/nginx/nginx.conf
+envsubst < /haproxy.cfg.template > /usr/local/etc/haproxy/haproxy.cfg
 
-nginx -g 'daemon off;'
+echo Starting HAProxy...
+haproxy -f /usr/local/etc/haproxy/haproxy.cfg

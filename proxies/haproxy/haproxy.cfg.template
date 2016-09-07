@@ -1,0 +1,16 @@
+global
+    maxconn 1024
+
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http-in
+    bind *:8080
+    default_backend default-server
+
+backend default-server
+    option http-keep-alive
+    server s0 $UPSTREAM_HOST:$UPSTREAM_PORT
