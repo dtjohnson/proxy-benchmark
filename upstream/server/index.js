@@ -36,6 +36,6 @@ http.createServer((req, res) => {
         res.setHeader('Content-Type', 'text/plain');
         res.end("Invalid message size");
     }
-}).listen(8080);
+}).listen(80);
 
-console.log("Upstream listening on port 8080...");
+console.log("Upstream listening on port 80...");

@@ -6,4 +6,4 @@ WORKDIR /usr/src/app
 COPY server/ /usr/src/app/server
 
 CMD ["node", "server"]
-EXPOSE 8080
+EXPOSE 80

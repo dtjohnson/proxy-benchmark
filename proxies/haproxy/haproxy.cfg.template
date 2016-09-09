@@ -8,7 +8,7 @@ defaults
     timeout server 50000ms
 
 frontend http-in
-    bind *:8080
+    bind *:80
     default_backend default-server
 
 backend default-server

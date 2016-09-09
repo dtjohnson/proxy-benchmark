@@ -20,6 +20,6 @@ const target = `http://${process.env.UPSTREAM_HOST}:${process.env.UPSTREAM_PORT}
 const proxy = httpProxy.createProxy();
 http.createServer((req, res) => {
     proxy.web(req, res, { target });
-}).listen(8080);
+}).listen(80);
 
-console.log("node-http-proxy listening on port 8080...");
+console.log("node-http-proxy listening on port 80...");

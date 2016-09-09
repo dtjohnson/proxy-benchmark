@@ -6,7 +6,7 @@ events {
 
 http {
     server {
-        listen 8080;
+        listen 80;
 
         location / {
             proxy_pass http://$UPSTREAM_HOST:$UPSTREAM_PORT;

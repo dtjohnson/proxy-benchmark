@@ -7,4 +7,4 @@ RUN chmod +x /startup.sh
 
 CMD ["/startup.sh"]
 
-EXPOSE 8080
+EXPOSE 80
