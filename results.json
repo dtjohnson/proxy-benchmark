@@ -1,0 +1,21 @@
+[{
+  "image": "foo",
+  "requestsPerSec": 774,
+  "transferBytesPerSec": 86016,
+  "messageLength": 10
+}, {
+  "image": "foo",
+  "requestsPerSec": 7740,
+  "transferBytesPerSec": 860160,
+  "messageLength": 100
+}, {
+  "image": "bar",
+  "requestsPerSec": 74,
+  "transferBytesPerSec": 106016,
+  "messageLength": 10
+}, {
+  "image": "bar",
+  "requestsPerSec": 3740,
+  "transferBytesPerSec": 60160,
+  "messageLength": 100
+}]
