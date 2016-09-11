@@ -10,7 +10,7 @@ process.on('SIGTERM', () => process.exit(1));
 const app = express();
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+app.get("/health-check", (req, res) => {
     res.send("OK");
 });
 
