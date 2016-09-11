@@ -1,0 +1,16 @@
+{
+  "region": "us-east-1",
+  "imageId": "ami-23ec3648",
+  "instanceType": "c3.large",
+  "securityGroupId": "sg-6aa36a7c",
+  "dockerImages": {
+    "wrk": "dtjohnson/proxy-benchmark:wrk",
+    "upstream": "dtjohnson/proxy-benchmark:upstream",
+    "proxies": [
+      "dtjohnson/proxy-benchmark:haproxy",
+      "dtjohnson/proxy-benchmark:nginx",
+      "dtjohnson/proxy-benchmark:node",
+      "dtjohnson/proxy-benchmark:node-http-proxy"
+    ]
+  }
+}
