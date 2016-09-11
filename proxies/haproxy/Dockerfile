@@ -9,6 +9,6 @@ COPY ./startup.sh /
 
 RUN chmod +x /startup.sh
 
-ENTRYPOINT ["/startup.sh"]
+CMD ["/startup.sh"]
 
 EXPOSE 80
