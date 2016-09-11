@@ -34,7 +34,7 @@ if (cluster.isMaster) {
             port: process.env.UPSTREAM_PORT,
             agent: keepAliveAgent
         }, proxyRes => {
-            res.writeHead(proxyRes.statusCode, proxyRes.headers);
+            res.writeHead(proxyRes.statusCode);
             proxyRes.pipe(res);
         });
 
