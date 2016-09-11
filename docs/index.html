@@ -1,1 +1,30 @@
-Foo
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Proxy Benchmark</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="AppCtrl">
+
+<div class="container">
+<h1>Proxy Benchmark</h1>
+<p>
+    <div class="input-group" ng-class="{ 'has-error': urlError }" style="margin-top: 20px; margin-bottom: 10px;">
+        <div class="input-group-addon">Result File URL</div>
+        <input type="text" class="form-control" ng-model="url" ng-model-options="{ debounce: 200 }" />
+    </div>
+    <nvd3 ng-if="!urlError" options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+</p>
+</div>
+
+</body>
+</html>
