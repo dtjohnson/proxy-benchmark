@@ -1,5 +1,6 @@
 angular.module('app', ['nvd3'])
     .controller('AppCtrl', function ($scope, $http, $location) {
+        $scope.model = {};
         var results;
 
         $scope.options = {
@@ -23,14 +24,14 @@ angular.module('app', ['nvd3'])
             $scope.data = [];
             _(results)
                 .filter({
-                    connections: $scope.connections
+                    connections: $scope.model.connections
                 })
                 .groupBy("image")
                 .forOwn(function (datapoints, image) {
                     datapoints = _.map(datapoints, function (datapoint) {
                         return {
                             x: datapoint.messageLength,
-                            y: datapoint.transferBytesPerSec
+                            y: datapoint[$scope.model.field]
                         };
                     });
 
@@ -44,45 +45,48 @@ angular.module('app', ['nvd3'])
                 });
 
             // Set the min/max Y value.
-            $scope.options.chart.yDomain = [0, Math.pow(10, Math.ceil(Math.log10(yMax)))];
+            $scope.options.chart.yAxis.axisLabel = _.find($scope.fieldOptions, ['field', $scope.model.field]).label;
+            $scope.options.chart.yDomain = [0, yMax];
         };
 
         var fetchData = function () {
             results = [];
-            $http.get($scope.url)
+            $http.get($scope.model.url)
                 .then(function (res) {
-                    $scope.urlError = false;
+                    $scope.model.urlError = false;
                     results = res.data;
                     $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
-                    $scope.connections = $scope.connectionOptions[0];
+                    $scope.model.connections = $scope.connectionOptions[0];
                     drawChart();
                 })
                 .catch(function () {
-                    $scope.urlError = true;
+                    $scope.model.urlError = true;
                 });
         };
 
-        $scope.url = "https://raw.githubusercontent.com/dtjohnson/proxy-benchmark/master/results.json";
+        $scope.fieldOptions = [
+            { label: "Throughput (B)", field: "transferBytesPerSec" },
+            { label: "Requests/s", field: "requestsPerSec" }
+        ];
+        $scope.model.field = $scope.fieldOptions[0].field;
+        $scope.model.url = "https://raw.githubusercontent.com/dtjohnson/proxy-benchmark/master/results.json";
 
-        $scope.$watch("url", function () {
-            $location.search("url", $scope.url);
+        $scope.$watch("model.url", function () {
+            $location.search("url", $scope.model.url);
             fetchData();
         });
 
-        $scope.$watch("connections", function () {
-            $location.search("connections", $scope.connections);
-            drawChart();
+        $scope.$watchGroup(["model.connections", "model.field"], function () {
+            $location.search("connections", $scope.model.connections);
+            $location.search("field", $scope.model.field);
+            if (results.length) drawChart();
         });
 
         $scope.$watch(function () {
-            return $location.search().url;
-        }, function (url) {
-            $scope.url = url;
-        });
-
-        $scope.$watch(function () {
-            return $location.search().connections;
-        }, function (connections) {
-            $scope.connections = parseInt(connections) || ($scope.connectionOptions && $scope.connectionOptions[0]);
+            return $location.search();
+        }, function (search) {
+            $scope.model.url = search.url;
+            $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];
+            $scope.model.field = search.field || $scope.fieldOptions[0].field;
         });
     });
