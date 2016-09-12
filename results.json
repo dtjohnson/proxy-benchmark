@@ -3,7 +3,1344 @@
     "connections": 2,
     "messageLength": 1,
     "image": "direct",
-    "requestsPerSec": 2585,
-    "transferBytesPerSec": 325632
+    "requestsPerSec": 2562,
+    "transferBytesPerSec": 322560
+  },
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1442,
+    "transferBytesPerSec": 146432
+  },
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 632,
+    "transferBytesPerSec": 93184
+  },
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1089,
+    "transferBytesPerSec": 145408
+  },
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 960,
+    "transferBytesPerSec": 113664
+  },
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 379,
+    "transferBytesPerSec": 45056
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "direct",
+    "requestsPerSec": 2574,
+    "transferBytesPerSec": 349184
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1519,
+    "transferBytesPerSec": 169984
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 621,
+    "transferBytesPerSec": 97280
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1171,
+    "transferBytesPerSec": 168960
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 996,
+    "transferBytesPerSec": 126976
+  },
+  {
+    "connections": 2,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 377,
+    "transferBytesPerSec": 49152
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "direct",
+    "requestsPerSec": 2608,
+    "transferBytesPerSec": 591872
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1540,
+    "transferBytesPerSec": 312320
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 556,
+    "transferBytesPerSec": 138240
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1085,
+    "transferBytesPerSec": 279552
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 905,
+    "transferBytesPerSec": 197632
+  },
+  {
+    "connections": 2,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 286,
+    "transferBytesPerSec": 63488
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "direct",
+    "requestsPerSec": 2322,
+    "transferBytesPerSec": 2097152
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1383,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 555,
+    "transferBytesPerSec": 637952
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 970,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 921,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 380,
+    "transferBytesPerSec": 425984
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "direct",
+    "requestsPerSec": 1260,
+    "transferBytesPerSec": 12582912
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 832,
+    "transferBytesPerSec": 8388608
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 436,
+    "transferBytesPerSec": 4194304
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 669,
+    "transferBytesPerSec": 6291456
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 617,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 318,
+    "transferBytesPerSec": 3145728
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "direct",
+    "requestsPerSec": 170,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 134,
+    "transferBytesPerSec": 12582912
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 107,
+    "transferBytesPerSec": 10485760
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 116,
+    "transferBytesPerSec": 11534336
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 119,
+    "transferBytesPerSec": 11534336
+  },
+  {
+    "connections": 2,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 92,
+    "transferBytesPerSec": 8388608
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "direct",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 15,
+    "transferBytesPerSec": 14680064
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 16,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 2,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 15,
+    "transferBytesPerSec": 14680064
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "direct",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 2,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "direct",
+    "requestsPerSec": 6156,
+    "transferBytesPerSec": 775168
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 4760,
+    "transferBytesPerSec": 485376
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1196,
+    "transferBytesPerSec": 176128
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 2954,
+    "transferBytesPerSec": 396288
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1728,
+    "transferBytesPerSec": 204800
+  },
+  {
+    "connections": 10,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 576,
+    "transferBytesPerSec": 69632
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "direct",
+    "requestsPerSec": 6239,
+    "transferBytesPerSec": 847872
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 3922,
+    "transferBytesPerSec": 438272
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1130,
+    "transferBytesPerSec": 178176
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3026,
+    "transferBytesPerSec": 436224
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1806,
+    "transferBytesPerSec": 230400
+  },
+  {
+    "connections": 10,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 575,
+    "transferBytesPerSec": 74752
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "direct",
+    "requestsPerSec": 5553,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 3898,
+    "transferBytesPerSec": 790528
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1103,
+    "transferBytesPerSec": 274432
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3042,
+    "transferBytesPerSec": 785408
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1578,
+    "transferBytesPerSec": 345088
+  },
+  {
+    "connections": 10,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 578,
+    "transferBytesPerSec": 128000
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "direct",
+    "requestsPerSec": 4760,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 3525,
+    "transferBytesPerSec": 3145728
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1113,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 2818,
+    "transferBytesPerSec": 3145728
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1699,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 575,
+    "transferBytesPerSec": 645120
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "direct",
+    "requestsPerSec": 1916,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1620,
+    "transferBytesPerSec": 15728640
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 836,
+    "transferBytesPerSec": 8388608
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1564,
+    "transferBytesPerSec": 15728640
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1210,
+    "transferBytesPerSec": 11534336
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 527,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "direct",
+    "requestsPerSec": 198,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 166,
+    "transferBytesPerSec": 15728640
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 166,
+    "transferBytesPerSec": 15728640
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 205,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 188,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 148,
+    "transferBytesPerSec": 14680064
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "direct",
+    "requestsPerSec": 19,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 20,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 20,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 20,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 20,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 10,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 19,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "direct",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 10,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 1,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "direct",
+    "requestsPerSec": 6723,
+    "transferBytesPerSec": 846848
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 6629,
+    "transferBytesPerSec": 675840
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1265,
+    "transferBytesPerSec": 186368
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3778,
+    "transferBytesPerSec": 505856
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1893,
+    "transferBytesPerSec": 225280
+  },
+  {
+    "connections": 100,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 398,
+    "transferBytesPerSec": 48128
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "direct",
+    "requestsPerSec": 6791,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 6080,
+    "transferBytesPerSec": 680960
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1261,
+    "transferBytesPerSec": 198656
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3916,
+    "transferBytesPerSec": 563200
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1871,
+    "transferBytesPerSec": 238592
+  },
+  {
+    "connections": 100,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 243,
+    "transferBytesPerSec": 31744
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "direct",
+    "requestsPerSec": 5996,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 5854,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1257,
+    "transferBytesPerSec": 312320
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3938,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1826,
+    "transferBytesPerSec": 399360
+  },
+  {
+    "connections": 100,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 335,
+    "transferBytesPerSec": 73728
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "direct",
+    "requestsPerSec": 5245,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 5491,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1231,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3673,
+    "transferBytesPerSec": 4194304
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1793,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 385,
+    "transferBytesPerSec": 432128
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "direct",
+    "requestsPerSec": 1996,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 2068,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 951,
+    "transferBytesPerSec": 9437184
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1852,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1271,
+    "transferBytesPerSec": 12582912
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 503,
+    "transferBytesPerSec": 4194304
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "direct",
+    "requestsPerSec": 193,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 183,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 176,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 200,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 202,
+    "transferBytesPerSec": 19922944
+  },
+  {
+    "connections": 100,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 171,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "direct",
+    "requestsPerSec": 19,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 16,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 17,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "direct",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 10485760
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 100,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "direct",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 88,
+    "transferBytesPerSec": 11264
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1640,
+    "transferBytesPerSec": 194560
+  },
+  {
+    "connections": 500,
+    "messageLength": 1,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 734,
+    "transferBytesPerSec": 88064
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "direct",
+    "requestsPerSec": 6737,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 6173,
+    "transferBytesPerSec": 691200
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 777,
+    "transferBytesPerSec": 121856
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3726,
+    "transferBytesPerSec": 536576
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1694,
+    "transferBytesPerSec": 216064
+  },
+  {
+    "connections": 500,
+    "messageLength": 10,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 221,
+    "transferBytesPerSec": 28672
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "direct",
+    "requestsPerSec": 6110,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 5848,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1298,
+    "transferBytesPerSec": 322560
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3668,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1707,
+    "transferBytesPerSec": 373760
+  },
+  {
+    "connections": 500,
+    "messageLength": 100,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 151,
+    "transferBytesPerSec": 32768
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "direct",
+    "requestsPerSec": 4799,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 5298,
+    "transferBytesPerSec": 5242880
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 1270,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 3314,
+    "transferBytesPerSec": 3145728
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1694,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 156,
+    "transferBytesPerSec": 175104
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "direct",
+    "requestsPerSec": 1921,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 2190,
+    "transferBytesPerSec": 22020096
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 959,
+    "transferBytesPerSec": 9437184
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 1814,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 1546,
+    "transferBytesPerSec": 14680064
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 135,
+    "transferBytesPerSec": 1048576
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "direct",
+    "requestsPerSec": 186,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 172,
+    "transferBytesPerSec": 16777216
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 163,
+    "transferBytesPerSec": 15728640
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 185,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 193,
+    "transferBytesPerSec": 18874368
+  },
+  {
+    "connections": 500,
+    "messageLength": 100000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 142,
+    "transferBytesPerSec": 13631488
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "direct",
+    "requestsPerSec": 18,
+    "transferBytesPerSec": 17825792
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 3,
+    "transferBytesPerSec": 3145728
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 4,
+    "transferBytesPerSec": 4194304
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 4,
+    "transferBytesPerSec": 4194304
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 14,
+    "transferBytesPerSec": 14680064
+  },
+  {
+    "connections": 500,
+    "messageLength": 1000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "direct",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:haproxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:nginx",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:apache",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
+  },
+  {
+    "connections": 500,
+    "messageLength": 10000000,
+    "image": "dtjohnson/proxy-benchmark:node-http-proxy",
+    "requestsPerSec": 0,
+    "transferBytesPerSec": 0
   }
 ]
