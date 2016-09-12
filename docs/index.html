@@ -18,9 +18,15 @@
 <div class="container">
 <h1>Proxy Benchmark</h1>
 <p>
-    <div class="input-group" ng-class="{ 'has-error': urlError }" style="margin-top: 20px; margin-bottom: 10px;">
-        <div class="input-group-addon">Result File URL</div>
-        <input type="text" class="form-control" ng-model="url" ng-model-options="{ debounce: 200 }" />
+    <div style="margin-top: 20px; margin-bottom: 10px;">
+        <div class="input-group" ng-class="{ 'has-error': urlError }" style="margin-bottom: 10px;">
+            <div class="input-group-addon">Result File URL</div>
+            <input type="text" class="form-control" ng-model="url" ng-model-options="{ debounce: 200 }" />
+        </div>
+        <div class="input-group" ng-if="!urlError">
+            <div class="input-group-addon">Num Connections</div>
+            <select class="form-control" style="width: 100px;" ng-model="connections" ng-options="option for option in connectionOptions"></select>
+        </div>
     </div>
     <nvd3 ng-if="!urlError" options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
 </p>

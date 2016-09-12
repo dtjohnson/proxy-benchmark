@@ -22,6 +22,9 @@ angular.module('app', ['nvd3'])
             var yMax = 0;
             $scope.data = [];
             _(results)
+                .filter({
+                    connections: $scope.connections
+                })
                 .groupBy("image")
                 .forOwn(function (datapoints, image) {
                     datapoints = _.map(datapoints, function (datapoint) {
@@ -50,6 +53,8 @@ angular.module('app', ['nvd3'])
                 .then(function (res) {
                     $scope.urlError = false;
                     results = res.data;
+                    $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
+                    $scope.connections = $scope.connectionOptions[0];
                     drawChart();
                 })
                 .catch(function () {
@@ -64,10 +69,20 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
+        $scope.$watch("connections", function () {
+            $location.search("connections", $scope.connections);
+            drawChart();
+        });
+
         $scope.$watch(function () {
             return $location.search().url;
         }, function (url) {
-            console.log(url);
             $scope.url = url;
+        });
+
+        $scope.$watch(function () {
+            return $location.search().connections;
+        }, function (connections) {
+            $scope.connections = parseInt(connections) || ($scope.connectionOptions && $scope.connectionOptions[0]);
         });
     });
