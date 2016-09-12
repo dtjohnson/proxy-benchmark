@@ -16,7 +16,7 @@
   },
   "connections": [2, 10, 100, 500],
   "messageLengths": [1, 10, 100, 1000, 10000, 100000, 1000000, 10000000],
-  "duration": 1,
-  "delayBetween": 1,
+  "duration": 30,
+  "delayBetween": 10,
   "threads": 2
 }
