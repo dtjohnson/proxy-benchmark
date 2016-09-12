@@ -6,15 +6,17 @@ angular.module('app', ['nvd3'])
         $scope.options = {
             chart: {
                 type: 'lineChart',
-                height: 450,
-                margin: { top: 20, right: 20, bottom: 40, left: 55 },
+                height: 500,
+                margin: { top: 20, right: 20, bottom: 40, left: 100 },
                 useInteractiveGuideline: true,
+                x: function(d) { return d.x >0 ? Math.log10(d.x + 1) : 0 },
                 xAxis: {
+                    tickFormat: function (d) { return (Math.pow(10, d) - 1).toFixed(0) },
                     axisLabel: 'Message Length (chars)'
                 },
                 yAxis: {
                     axisLabel: 'Throughput (B)',
-                    axisLabelDistance: -10
+                    axisLabelDistance: 20
                 }
             }
         };
