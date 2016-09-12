@@ -2,20 +2,36 @@
   "image": "foo",
   "requestsPerSec": 774,
   "transferBytesPerSec": 86016,
-  "messageLength": 10
+  "messageLength": 10,
+  "connections": 10
 }, {
   "image": "foo",
   "requestsPerSec": 7740,
   "transferBytesPerSec": 860160,
-  "messageLength": 100
+  "messageLength": 100,
+  "connections": 10
+}, {
+  "image": "foo",
+  "requestsPerSec": 774,
+  "transferBytesPerSec": 860166,
+  "messageLength": 10,
+  "connections": 100
+}, {
+  "image": "foo",
+  "requestsPerSec": 7740,
+  "transferBytesPerSec": 86010,
+  "messageLength": 100,
+  "connections": 100
 }, {
   "image": "bar",
   "requestsPerSec": 74,
   "transferBytesPerSec": 106016,
-  "messageLength": 10
+  "messageLength": 10,
+  "connections": 10
 }, {
   "image": "bar",
   "requestsPerSec": 3740,
   "transferBytesPerSec": 60160,
-  "messageLength": 100
+  "messageLength": 100,
+  "connections": 10
 }]
