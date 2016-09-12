@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "connections": 2,
+    "messageLength": 1,
+    "image": "direct",
+    "requestsPerSec": 2585,
+    "transferBytesPerSec": 325632
+  }
+]
