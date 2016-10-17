@@ -68,7 +68,8 @@ angular.module('app', ['nvd3'])
 
         $scope.fieldOptions = [
             { label: "Throughput (B)", field: "transferBytesPerSec" },
-            { label: "Requests/s", field: "requestsPerSec" }
+            { label: "Requests/s", field: "requestsPerSec" },
+            { label: "Latency (ms)", field: "latencyMs" }
         ];
         $scope.model.field = $scope.fieldOptions[0].field;
         $scope.model.url = "https://raw.githubusercontent.com/dtjohnson/proxy-benchmark/master/results.json";

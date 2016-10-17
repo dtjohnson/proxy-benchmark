@@ -10,7 +10,7 @@ process.on('SIGTERM', () => process.exit(1));
 
 if (cluster.isMaster) {
     const numCPUs = os.cpus().length;
-    for (var i = 0; i < numCPUs; i++) {
+    for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 
