@@ -21,6 +21,6 @@ app.post('/', (req, res) => {
     });
 });
 
-app.listen(80, function () {
+app.listen(80, () => {
     console.log('wrk listening on port 80...');
 });

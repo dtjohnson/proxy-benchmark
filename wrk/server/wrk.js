@@ -1,13 +1,21 @@
 "use strict";
 
 const execFile = require("child_process").execFile;
-const outputRegex = /Requests\/sec:\s+([\d.]+)\s+Transfer\/sec:\s+([\d.]+)(\w+)/;
+const outputRegex = /Latency\s+([\d.]+)(\w+)[\s\S]+Requests\/sec:\s+([\d.]+)\s+Transfer\/sec:\s+([\d.]+)(\w+)/;
 
-const unitConversions = {
+const sizeUnitConversions = {
     B: 1,
     KB: 1024,
     MB: 1024 * 1024,
     GB: 1024 * 1024 * 1024
+};
+
+const timeUnitConversions = {
+    us: 1 / 1000,
+    ms: 1,
+    s: 1000,
+    m: 1000 * 60,
+    h: 1000 * 60 * 60
 };
 
 module.exports = (opts, cb) => {
@@ -23,13 +31,18 @@ module.exports = (opts, cb) => {
         const match = outputRegex.exec(stdout);
         if (!match) return cb("Unable to parse output", { stdout });
 
-        const requestsPerSec = parseInt(match[1]);
-        const transferPerSec = parseInt(match[2]);
-        const transferPerSecUnit = match[3];
+        const latency = parseFloat(match[1]);
+        const latencyUnit = match[2];
+        const requestsPerSec = parseFloat(match[3]);
+        const transferPerSec = parseFloat(match[4]);
+        const transferPerSecUnit = match[5];
 
-        const conversion = unitConversions[transferPerSecUnit.toUpperCase()];
-        const transferBytesPerSec = transferPerSec * conversion;
+        const latencyConversion = timeUnitConversions[latencyUnit.toLowerCase()];
+        const latencyMs = latency * latencyConversion;
 
-        cb(null, { requestsPerSec, transferBytesPerSec, stdout });
+        const transgerConversion = sizeUnitConversions[transferPerSecUnit.toUpperCase()];
+        const transferBytesPerSec = transferPerSec * transgerConversion;
+
+        cb(null, { latencyMs, requestsPerSec, transferBytesPerSec, stdout });
     });
 };
