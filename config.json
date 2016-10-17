@@ -9,6 +9,7 @@
     "proxies": [
       "dtjohnson/proxy-benchmark:haproxy",
       "dtjohnson/proxy-benchmark:nginx",
+      "dtjohnson/proxy-benchmark:openresty-lua",
       "dtjohnson/proxy-benchmark:apache",
       "dtjohnson/proxy-benchmark:node",
       "dtjohnson/proxy-benchmark:node-http-proxy"
