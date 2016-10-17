@@ -34,12 +34,14 @@ if (cluster.isMaster) {
             port: process.env.UPSTREAM_PORT,
             agent: keepAliveAgent
         }, proxyRes => {
-            // TODO: Should write response headers too, but adding them to writeHead tanks performance...
-            res.writeHead(proxyRes.statusCode);
-            proxyRes.pipe(res);
+            delete proxyRes.headers.connection;
+            delete proxyRes.headers["content-length"];
+
+            res.writeHead(proxyRes.statusCode, proxyRes.headers);
+            proxyRes.pipe(res, { end: true });
         });
 
-        req.pipe(proxyReq);
+        req.pipe(proxyReq, { end: true });
 
         proxyReq.on("error", e => {
             res.write(e.message);
