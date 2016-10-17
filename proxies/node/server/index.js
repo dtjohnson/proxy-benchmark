@@ -21,7 +21,7 @@ const numCPUs = os.cpus().length;
 const keepAliveAgent = new http.Agent({ keepAlive: true });
 
 if (cluster.isMaster) {
-    for (var i = 0; i < numCPUs; i++) {
+    for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 } else {
@@ -34,7 +34,7 @@ if (cluster.isMaster) {
             port: process.env.UPSTREAM_PORT,
             agent: keepAliveAgent
         }, proxyRes => {
-            res.writeHead(proxyRes.statusCode);
+            res.writeHead(proxyRes.statusCode, proxyRes.headers);
             proxyRes.pipe(res);
         });
 
@@ -51,7 +51,7 @@ if (cluster.isMaster) {
             res.end();
         });
 
-        req.on('aborted', function () {
+        req.on('aborted', () => {
             proxyReq.abort();
         });
     }).listen(80);
