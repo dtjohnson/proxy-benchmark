@@ -26,18 +26,16 @@ for (let i = 0; i <= 7; i++) {
 
 console.log("Starting server...");
 http.createServer((req, res) => {
-    res.setHeader('Content-Type', 'text/plain');
-
     if (req.url === "/health-check") {
-        res.statusCode = 200;
+        res.writeHead(200, { "Content-Type": "text/plain" });
         res.end("OK");
     } else {
         const size = req.url.substr(1);
         if (msgs[size]) {
-            res.statusCode = 200;
+            res.writeHead(200, { "Content-Type": "text/plain" });
             res.end(msgs[size]);
         } else {
-            res.statusCode = 400;
+            res.writeHead(400, { "Content-Type": "text/plain" });
             res.end("Invalid message size");
         }
     }
