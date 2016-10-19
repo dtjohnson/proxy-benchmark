@@ -35,7 +35,6 @@ if (cluster.isMaster) {
             agent: keepAliveAgent
         }, proxyRes => {
             delete proxyRes.headers.connection;
-            delete proxyRes.headers["content-length"];
 
             res.writeHead(proxyRes.statusCode, proxyRes.headers);
             proxyRes.pipe(res, { end: true });
