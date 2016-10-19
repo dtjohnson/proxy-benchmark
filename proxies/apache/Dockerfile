@@ -9,8 +9,8 @@ RUN apt-get update \
 
 RUN /usr/sbin/a2enmod proxy_http
 
-COPY ./000-default.conf.template /
-COPY ./startup.sh /
+COPY 000-default.conf.template /
+COPY startup.sh /
 
 RUN chmod +x /startup.sh
 

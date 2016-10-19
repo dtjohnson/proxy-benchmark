@@ -1,7 +1,7 @@
 FROM nginx
 
-COPY ./nginx.conf.template /
-COPY ./startup.sh /
+COPY nginx.conf.template /
+COPY startup.sh /
 
 RUN chmod +x /startup.sh
 
