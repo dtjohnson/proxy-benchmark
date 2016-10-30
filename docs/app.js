@@ -26,7 +26,8 @@ angular.module('app', ['nvd3'])
             $scope.data = [];
             _(results)
                 .filter({
-                    connections: $scope.model.connections
+                    connections: $scope.model.connections,
+                    compression: $scope.model.compression
                 })
                 .groupBy("image")
                 .forOwn(function (datapoints, image) {
@@ -59,6 +60,7 @@ angular.module('app', ['nvd3'])
                     results = res.data;
                     $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
                     $scope.model.connections = $scope.connectionOptions[0];
+                    $scope.model.compression = true;
                     drawChart();
                 })
                 .catch(function () {
@@ -79,7 +81,8 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
-        $scope.$watchGroup(["model.connections", "model.field"], function () {
+        $scope.$watchGroup(["model.compression", "model.connections", "model.field"], function () {
+            $location.search("compression", $scope.model.compression ? "true" : "false");
             $location.search("connections", $scope.model.connections);
             $location.search("field", $scope.model.field);
             if (results.length) drawChart();
@@ -88,6 +91,7 @@ angular.module('app', ['nvd3'])
         $scope.$watch(function () {
             return $location.search();
         }, function (search) {
+            $scope.model.compression = search.compression === "true";
             $scope.model.url = search.url;
             $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];
             $scope.model.field = search.field || $scope.fieldOptions[0].field;

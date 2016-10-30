@@ -31,6 +31,11 @@
             <div class="input-group-addon">Display</div>
             <select class="form-control" style="width: auto" ng-model="model.field" ng-options="option.field as option.label for option in fieldOptions"></select>
         </div>
+        <div class="checkbox" ng-if="!model.urlError">
+            <label>
+                <input type="checkbox" ng-model="model.compression"> Gzip Compression
+            </label>
+        </div>
     </div>
     <nvd3 ng-if="!model.urlError" options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
 </p>

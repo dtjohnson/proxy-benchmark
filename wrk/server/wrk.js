@@ -22,9 +22,15 @@ module.exports = (opts, cb) => {
     const args = [
         "-d", `${opts.duration || 10}s`,
         "-c", opts.connections || 1,
-        "-t", opts.threads || 1,
-        opts.url
+        "-t", opts.threads || 1
     ];
+
+    if (opts.compression) {
+        args.push("-H");
+        args.push("Accept-Encoding: gzip");
+    }
+
+    args.push(opts.url);
 
     execFile("wrk", args, (err, stdout, stderr) => {
         if (err) return cb(err, { stdout, stderr });
