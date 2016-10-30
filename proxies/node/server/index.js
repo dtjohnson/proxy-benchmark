@@ -3,6 +3,9 @@
 const cluster = require('cluster');
 const http = require('http');
 const os = require('os');
+const proxy = require("node-proxy-test");
+const connect = require("connect");
+const compression = require("compression");
 
 process.on('SIGINT', () => process.exit(1));
 process.on('SIGTERM', () => process.exit(1));
@@ -18,46 +21,20 @@ if (!process.env.UPSTREAM_PORT) {
 }
 
 const numCPUs = os.cpus().length;
-const keepAliveAgent = new http.Agent({ keepAlive: true });
 
 if (cluster.isMaster) {
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
     }
 } else {
-    http.createServer((req, res) => {
-        const proxyReq = http.request({
-            method: req.method,
-            path: req.url,
-            headers: req.headers,
-            hostname: process.env.UPSTREAM_HOST,
-            port: process.env.UPSTREAM_PORT,
-            agent: keepAliveAgent
-        }, proxyRes => {
-            delete proxyRes.headers.connection;
+    const app = connect();
+    app.use(compression());
+    app.use(proxy({
+        upstreamHost: process.env.UPSTREAM_HOST,
+        upstreamPort: process.env.UPSTREAM_PORT
+    }));
 
-            res.writeHead(proxyRes.statusCode, proxyRes.headers);
-            proxyRes.pipe(res, { end: true });
-        });
-
-        req.pipe(proxyReq, { end: true });
-
-        proxyReq.on("error", e => {
-            res.write(e.message);
-            res.end();
-        });
-
-        req.on("error", e => {
-            proxyReq.abort();
-            res.write(e.message);
-            res.end();
-        });
-
-        req.on('aborted', () => {
-            proxyReq.abort();
-        });
-    }).listen(80);
+    http.createServer(app).listen(80);
 
     console.log("node listening on port 80...");
 }
-

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "compression": "^1.6.2",
+    "connect": "^3.5.0",
+    "node-proxy-test": "git://github.com/dtjohnson/node-proxy-test.git"
+  }
+}
