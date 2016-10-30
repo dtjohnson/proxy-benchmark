@@ -28,7 +28,7 @@ if (cluster.isMaster) {
     }
 } else {
     const app = connect();
-    app.use(compression());
+    app.use(compression({ level: 1 }));
     app.use(proxy({
         upstreamHost: process.env.UPSTREAM_HOST,
         upstreamPort: process.env.UPSTREAM_PORT

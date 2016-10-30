@@ -30,7 +30,7 @@ if (cluster.isMaster) {
     const target = `http://${process.env.UPSTREAM_HOST}:${process.env.UPSTREAM_PORT}`;
     const proxy = httpProxy.createProxy();
     const app = connect();
-    app.use(compression());
+    app.use(compression({ level: 1 }));
     app.use((req, res) => {
         proxy.web(req, res, { target });
     });
