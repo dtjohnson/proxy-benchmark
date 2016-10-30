@@ -5,6 +5,9 @@ events {
 }
 
 http {
+    gzip $GZIP;
+    gzip_types text/plain text/css text/js text/xml text/javascript application/javascript application/x-javascript application/json application/xml application/xml+rss;
+
     server {
         listen 80;
 

@@ -9,6 +9,7 @@ defaults
 
 frontend http-in
     bind *:80
+    $COMPRESSION
     default_backend default-server
 
 backend default-server
