@@ -27,6 +27,7 @@ angular.module('app', ['nvd3'])
             _(results)
                 .filter({
                     connections: $scope.model.connections,
+                    delay: $scope.model.delay,
                     compression: $scope.model.compression
                 })
                 .groupBy("image")
@@ -59,7 +60,9 @@ angular.module('app', ['nvd3'])
                     $scope.model.urlError = false;
                     results = res.data;
                     $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
+                    $scope.delayOptions = _(results).map('delay').uniq().sortBy().value();
                     $scope.model.connections = $scope.connectionOptions[0];
+                    $scope.model.delay = $scope.delayOptions[0];
                     $scope.model.compression = true;
                     drawChart();
                 })
@@ -81,9 +84,10 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
-        $scope.$watchGroup(["model.compression", "model.connections", "model.field"], function () {
+        $scope.$watchGroup(["model.compression", "model.connections", "model.delay", "model.field"], function () {
             $location.search("compression", $scope.model.compression ? "true" : "false");
             $location.search("connections", $scope.model.connections);
+            $location.search("delay", $scope.model.delay);
             $location.search("field", $scope.model.field);
             if (results.length) drawChart();
         });
@@ -94,6 +98,7 @@ angular.module('app', ['nvd3'])
             $scope.model.compression = search.compression === "true";
             $scope.model.url = search.url;
             $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];
+            $scope.model.delay = parseInt(search.delay) || $scope.delayOptions && $scope.delayOptions[0];
             $scope.model.field = search.field || $scope.fieldOptions[0].field;
         });
     });
