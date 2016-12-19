@@ -32,6 +32,22 @@ http.createServer((req, res) => {
     if (u.pathname === "/health-check") {
         res.writeHead(200, { "Content-Type": "text/plain" });
         res.end("OK");
+    } else if (u.pathname === "/dump") {
+        let message = `URL: ${req.url}\n`;
+        message += `Method: ${req.method}\n`;
+
+        message += `\n --- HEADERS --- \n`;
+        for (let i = 0; i < req.rawHeaders.length; i += 2) {
+            const name = req.rawHeaders[i];
+            const value = req.rawHeaders[i + 1];
+            message += `${name}: ${value}\n`;
+        }
+
+        message += `\n --- BODY --- \n`;
+
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.write(message);
+        req.pipe(res);
     } else {
         let delay = 0;
         if (u.query && u.query.delay) {

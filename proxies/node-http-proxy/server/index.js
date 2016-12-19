@@ -20,6 +20,11 @@ if (!process.env.UPSTREAM_PORT) {
     process.exit(1);
 }
 
+if (!process.env.UPSTREAM_KEEP_ALIVE) {
+    console.error("You must set the UPSTREAM_KEEP_ALIVE environmental variable");
+    process.exit(1);
+}
+
 const numCPUs = os.cpus().length;
 
 if (cluster.isMaster) {
@@ -27,8 +32,10 @@ if (cluster.isMaster) {
         cluster.fork();
     }
 } else {
+    let agent;
+    if (process.env.UPSTREAM_KEEP_ALIVE === "true") agent = new http.Agent({ keepAlive: true });
     const target = `http://${process.env.UPSTREAM_HOST}:${process.env.UPSTREAM_PORT}`;
-    const proxy = httpProxy.createProxy();
+    const proxy = httpProxy.createProxy({ agent });
     const app = connect();
     app.use(compression({ level: 1 }));
     app.use((req, res) => {

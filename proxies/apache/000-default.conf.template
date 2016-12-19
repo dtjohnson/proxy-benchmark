@@ -1,3 +1,4 @@
 <VirtualHost *:80>
 ProxyPass / http://$UPSTREAM_HOST:$UPSTREAM_PORT/
+$SET_NO_KEEP_ALIVE
 </VirtualHost>
