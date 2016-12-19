@@ -8,4 +8,4 @@ DOCKERFILE=$DIR/../wrk
 docker build -t $IMAGE $DOCKERFILE
 
 echo
-docker run --rm $IMAGE wrk $@
+docker run --rm $IMAGE wrk "$@"

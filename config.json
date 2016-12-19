@@ -14,9 +14,9 @@
       "dtjohnson/proxy-benchmark:node-http-proxy"
     ]
   },
-  "connections": [2, 10, 100, 500],
+  "connections": [2, 10, 100],
   "messageLengths": [1, 10, 100, 1000, 10000, 100000, 1000000],
-  "delays": [0, 10, 100],
+  "delays": [0],
   "duration": 30,
   "delayBetween": 10,
   "threads": 2
