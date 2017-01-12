@@ -2,7 +2,9 @@
 
 const cluster = require('cluster');
 const http = require('http');
+const https = require('https');
 const os = require('os');
+const fs = require('fs');
 const httpProxy = require('http-proxy');
 const connect = require("connect");
 const compression = require("compression");
@@ -25,8 +27,12 @@ if (!process.env.UPSTREAM_KEEP_ALIVE) {
     process.exit(1);
 }
 
-const numCPUs = os.cpus().length;
+const sslOptions = {
+    key: fs.readFileSync(`${__dirname}/key.pem`),
+    cert: fs.readFileSync(`${__dirname}/cert.pem`)
+};
 
+const numCPUs = os.cpus().length;
 if (cluster.isMaster) {
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork();
@@ -43,6 +49,7 @@ if (cluster.isMaster) {
     });
 
     http.createServer(app).listen(80);
+    https.createServer(sslOptions, app).listen(443);
 
-    console.log("node-http-proxy listening on port 80...");
+    console.log("node-http-proxy listening on port 80 and 443...");
 }
