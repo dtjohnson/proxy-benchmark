@@ -9,6 +9,7 @@ defaults
 
 frontend http-in
     bind *:80
+    bind *:443 ssl crt /etc/ssl/bundle.pem
     compression algo gzip
     default_backend default-server
 

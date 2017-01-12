@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY haproxy.cfg.template /
 COPY startup.sh /
+COPY bundle.pem /etc/ssl/
 
 RUN chmod +x /startup.sh
 
