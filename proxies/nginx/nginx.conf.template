@@ -10,6 +10,10 @@ http {
 
     server {
         listen 80;
+        listen 443 ssl;
+
+        ssl_certificate /etc/ssl/cert.pem;
+        ssl_certificate_key /etc/ssl/key.pem;
 
         location / {
             proxy_pass http://$UPSTREAM_HOST:$UPSTREAM_PORT;
