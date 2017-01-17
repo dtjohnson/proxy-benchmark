@@ -1,6 +1,4 @@
 {
   "dependencies": {
-    "compression": "^1.6.2",
-    "connect": "^3.5.0"
   }
 }

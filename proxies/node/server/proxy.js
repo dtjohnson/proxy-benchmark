@@ -1,6 +1,7 @@
 "use strict";
 
 const http = require('http');
+const zlib = require('zlib');
 
 const stripHeaders = {};
 [
@@ -29,6 +30,7 @@ module.exports = opts => {
     const agent = new http.Agent({ keepAlive: opts.keepAlive });
 
     return (req, res) => {
+        let useGzip = false;
         const proxyReq = http.request({
             method: req.method,
             path: req.url,
@@ -36,8 +38,6 @@ module.exports = opts => {
             port: opts.upstreamPort,
             agent
         }, proxyRes => {
-            // res.statusCode = proxyRes.statusCode;
-
             // Strip response headers that shouldn't be send to the client.
             for (let i = 0; i < proxyRes.rawHeaders.length; i += 2) {
                 const name = proxyRes.rawHeaders[i];
@@ -46,15 +46,36 @@ module.exports = opts => {
                 res.setHeader(name, value);
             }
 
-            res.writeHead(proxyRes.statusCode);
-            proxyRes.pipe(res);
+            if (useGzip) {
+                const gzip = zlib.createGzip({
+                    level: 1
+                });
+
+                res.setHeader("Content-Encoding", "gzip");
+
+                res.writeHead(proxyRes.statusCode);
+                proxyRes.pipe(gzip).pipe(res);
+            } else {
+                res.writeHead(proxyRes.statusCode);
+                proxyRes.pipe(res);
+            }
         });
 
         // Strip request headers that shouldn't be sent upstream.
         for (let i = 0; i < req.rawHeaders.length; i += 2) {
             const name = req.rawHeaders[i];
-            if (stripHeaders[name] || stripHeaders[name.toLowerCase()]) continue;
             const value = req.rawHeaders[i + 1];
+
+            if (name === "Accept-Encoding" || name.toLowerCase() === "accept-encoding") {
+                if (value === "gzip" || value.indexOf("gzip") >= 0) useGzip = true;
+
+                // TODO: Properly support other forms:
+                //     Accept-Encoding: gzip, compress, br
+                //     Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
+            }
+
+            if (stripHeaders[name] || stripHeaders[name.toLowerCase()]) continue;
+
             proxyReq.setHeader(name, value);
         }
 

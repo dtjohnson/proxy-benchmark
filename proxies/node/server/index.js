@@ -5,8 +5,6 @@ const http = require('http');
 const https = require('https');
 const os = require('os');
 const fs = require('fs');
-const connect = require("connect");
-const compression = require("compression");
 const proxy = require("./proxy");
 
 process.on('SIGINT', () => process.exit(1));
@@ -38,16 +36,14 @@ if (cluster.isMaster) {
         cluster.fork();
     }
 } else {
-    const app = connect();
-    app.use(compression({ level: 1 }));
-    app.use(proxy({
+    const p = proxy({
         keepAlive: process.env.UPSTREAM_KEEP_ALIVE === "true",
         upstreamHost: process.env.UPSTREAM_HOST,
         upstreamPort: process.env.UPSTREAM_PORT
-    }));
+    });
 
-    http.createServer(app).listen(80);
-    https.createServer(sslOptions, app).listen(443);
+    http.createServer(p).listen(80);
+    https.createServer(sslOptions, p).listen(443);
 
     console.log("node listening on port 80 and 443...");
 }

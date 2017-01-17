@@ -9,9 +9,8 @@ angular.module('app', ['nvd3'])
                 height: 500,
                 margin: { top: 20, right: 20, bottom: 40, left: 100 },
                 useInteractiveGuideline: true,
-                x: function(d) { return d.x >0 ? Math.log10(d.x + 1) : 0 },
+                xScale: d3.scale.log(),
                 xAxis: {
-                    tickFormat: function (d) { return (Math.pow(10, d) - 1).toFixed(0) },
                     axisLabel: 'Message Length (chars)'
                 },
                 yAxis: {
@@ -22,7 +21,8 @@ angular.module('app', ['nvd3'])
         };
 
         var drawChart = function () {
-            var yMax = 0;
+            var xMax = 0, xMin = Infinity;
+            var yMax = 0, yMin = Infinity;
             $scope.data = [];
             _(results)
                 .filter({
@@ -43,15 +43,37 @@ angular.module('app', ['nvd3'])
                     var y = _.maxBy(datapoints, "y").y;
                     if (y > yMax) yMax = y;
 
+                    var ym = _.minBy(datapoints, "y").y;
+                    if (ym < yMin) yMin = ym;
+
+                    var x = _.maxBy(datapoints, "x").x;
+                    if (x > xMax) xMax = x;
+
+                    var xm = _.minBy(datapoints, "x").x;
+                    if (xm < xMin) xMin = xm;
+
                     $scope.data.push({
                         key: image,
                         values: datapoints
                     });
                 });
 
-            // Set the min/max Y value.
-            $scope.options.chart.yAxis.axisLabel = _.find($scope.fieldOptions, ['field', $scope.model.field]).label;
-            $scope.options.chart.yDomain = [0, yMax];
+            xMin = Math.pow(10, Math.floor(Math.log10(xMin)));
+            xMax = Math.pow(10, Math.ceil(Math.log10(xMax)));
+
+            var xTicks = $scope.options.chart.xAxis.tickValues = [];
+            for (var i = Math.log10(xMin); i <= Math.log10(xMax); i++) {
+                xTicks.push(Math.pow(10, i));
+            }
+
+            if ($scope.model.field === "transferBytesPerSec") {
+                console.log("LOG");
+                $scope.options.chart.yScale = d3.scale.log();
+                $scope.options.chart.yDomain = [yMin, yMax];
+            } else {
+                $scope.options.chart.yScale = null;
+                $scope.options.chart.yDomain = [0, yMax];
+            }
         };
 
         var fetchData = function () {
