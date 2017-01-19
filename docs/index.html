@@ -38,6 +38,11 @@
         </div>
         <div class="checkbox" ng-if="!model.urlError" style="margin-bottom: 10px;">
             <label>
+                <input type="checkbox" ng-model="model.ssl"> SSL
+            </label>
+        </div>
+        <div class="checkbox" ng-if="!model.urlError" style="margin-bottom: 10px;">
+            <label>
                 <input type="checkbox" ng-model="model.keepAlive"> Upstream Keep-Alive
             </label>
         </div>

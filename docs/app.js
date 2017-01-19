@@ -29,7 +29,8 @@ angular.module('app', ['nvd3'])
                     connections: $scope.model.connections,
                     delay: $scope.model.delay,
                     compression: $scope.model.compression,
-                    keepAlive: $scope.model.keepAlive
+                    keepAlive: $scope.model.keepAlive,
+                    ssl: $scope.model.ssl
                 })
                 .groupBy("image")
                 .forOwn(function (datapoints, image) {
@@ -88,6 +89,7 @@ angular.module('app', ['nvd3'])
                     $scope.model.delay = $scope.delayOptions[0];
                     $scope.model.compression = false;
                     $scope.model.keepAlive = true;
+                    $scope.model.ssl = false;
                     drawChart();
                 })
                 .catch(function () {
@@ -108,9 +110,10 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
-        $scope.$watchGroup(["model.compression", "model.keepAlive", "model.connections", "model.delay", "model.field"], function () {
+        $scope.$watchGroup(["model.compression", "model.keepAlive", "model.ssl", "model.connections", "model.delay", "model.field"], function () {
             $location.search("compression", $scope.model.compression ? "true" : "false");
             $location.search("keepAlive", $scope.model.keepAlive ? "true" : "false");
+            $location.search("ssl", $scope.model.ssl ? "true" : "false");
             $location.search("connections", $scope.model.connections);
             $location.search("delay", $scope.model.delay);
             $location.search("field", $scope.model.field);
@@ -122,6 +125,7 @@ angular.module('app', ['nvd3'])
         }, function (search) {
             $scope.model.compression = search.compression === "true";
             $scope.model.keepAlive = search.keepAlive === "true";
+            $scope.model.ssl = search.ssl === "true";
             $scope.model.url = search.url;
             $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];
             $scope.model.delay = parseInt(search.delay) || $scope.delayOptions && $scope.delayOptions[0];
