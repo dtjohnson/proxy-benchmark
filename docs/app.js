@@ -1,6 +1,11 @@
 angular.module('app', ['nvd3'])
     .controller('AppCtrl', function ($scope, $http, $location) {
-        $scope.model = {};
+        $scope.model = {
+            compression: false,
+            keepAlive: true,
+            ssl: false
+        };
+
         var results;
 
         $scope.options = {
@@ -68,7 +73,6 @@ angular.module('app', ['nvd3'])
             }
 
             if ($scope.model.field === "transferBytesPerSec") {
-                console.log("LOG");
                 $scope.options.chart.yScale = d3.scale.log();
                 $scope.options.chart.yDomain = [yMin, yMax];
             } else {
@@ -85,11 +89,8 @@ angular.module('app', ['nvd3'])
                     results = res.data;
                     $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
                     $scope.delayOptions = _(results).map('delay').uniq().sortBy().value();
-                    $scope.model.connections = $scope.connectionOptions[0];
-                    $scope.model.delay = $scope.delayOptions[0];
-                    $scope.model.compression = false;
-                    $scope.model.keepAlive = true;
-                    $scope.model.ssl = false;
+                    $scope.model.connections = $scope.model.connections || $scope.connectionOptions[0];
+                    $scope.model.delay = $scope.model.delay || $scope.delayOptions[0];
                     drawChart();
                 })
                 .catch(function () {
