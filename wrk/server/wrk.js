@@ -22,7 +22,8 @@ module.exports = (opts, cb) => {
     const args = [
         "-d", `${opts.duration || 10}s`,
         "-c", opts.connections || 1,
-        "-t", opts.threads || 1
+        "-t", opts.threads || 1,
+        "-R", opts.requestRate || 1000
     ];
 
     if (opts.compression) {
@@ -49,6 +50,6 @@ module.exports = (opts, cb) => {
         const transgerConversion = sizeUnitConversions[transferPerSecUnit.toUpperCase()];
         const transferBytesPerSec = transferPerSec * transgerConversion;
 
-        cb(null, { latencyMs, requestsPerSec, transferBytesPerSec, stdout });
+        cb(null, { latencyMs, requestsPerSec, transferBytesPerSec, args, stdout });
     });
 };

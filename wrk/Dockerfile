@@ -5,8 +5,8 @@ RUN apt-get update \
     build-essential \
     libssl-dev \
     git \
- && git clone https://github.com/wg/wrk.git \
- && cd wrk \
+ && git clone https://github.com/giltene/wrk2.git \
+ && cd wrk2 \
  && make \
  && cp wrk /usr/local/bin \
  && mkdir -p /usr/src/app
