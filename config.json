@@ -16,7 +16,11 @@
   },
   "connections": [2, 10, 100],
   "messageLengths": [1, 10, 100, 1000, 10000, 100000, 1000000],
+  "requestRates": [20, 100, 1000],
   "delays": [0],
+  "compressions": [false, true],
+  "keepAlives": [false, true],
+  "ssls": [false, true],
   "duration": 30,
   "delayBetween": 10,
   "threads": 2
