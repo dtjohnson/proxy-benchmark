@@ -1,7 +1,7 @@
 "use strict";
 
 const execFile = require("child_process").execFile;
-const outputRegex = /Latency\s+([\d.]+)(\w+)[\s\S]+Requests\/sec:\s+([\d.]+)\s+Transfer\/sec:\s+([\d.]+)(\w+)/;
+const outputRegex = /Latency\s+([\d.]+|-nan)(\w+)[\s\S]+Requests\/sec:\s+([\d.]+)\s+Transfer\/sec:\s+([\d.]+)(\w+)/;
 
 const sizeUnitConversions = {
     B: 1,
