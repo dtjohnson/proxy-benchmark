@@ -80,6 +80,8 @@ angular.module('app', ['nvd3'])
                 $scope.options.chart.yScale = null;
                 $scope.options.chart.yDomain = [0, yMax];
             }
+
+            $scope.options.chart.yAxis.axisLabel = _.find($scope.fieldOptions, ['field', $scope.model.field]).label;
         };
 
         var fetchData = function () {
