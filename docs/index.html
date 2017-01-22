@@ -27,6 +27,10 @@
             <div class="input-group-addon">Num Connections</div>
             <select class="form-control" style="width: auto;" ng-model="model.connections" ng-options="option for option in connectionOptions"></select>
         </div>
+        <div class="input-group" ng-if="!model.urlError" style="margin-bottom: 10px;">
+            <div class="input-group-addon">Request Rate</div>
+            <select class="form-control" style="width: auto;" ng-model="model.requestRate" ng-options="option for option in requestRateOptions"></select>
+        </div>
         <!--<div class="input-group" ng-if="!model.urlError" style="margin-bottom: 10px;">-->
             <!--<div class="input-group-addon">Upstream Delay (ms)</div>-->
             <!--<select class="form-control" style="width: auto;" ng-model="model.delay" ng-options="option for option in delayOptions"></select>-->
