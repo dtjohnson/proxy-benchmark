@@ -23,5 +23,5 @@
   "ssls": [false, true],
   "duration": 30,
   "delayBetween": 10,
-  "connectionsPerThread": 20
+  "connectionsPerThreadRequest": 2000
 }
