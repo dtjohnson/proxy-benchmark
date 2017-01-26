@@ -14,12 +14,10 @@ angular.module('app', ['nvd3'])
                 height: 500,
                 margin: { top: 20, right: 20, bottom: 40, left: 100 },
                 useInteractiveGuideline: true,
-                xScale: d3.scale.log(),
                 xAxis: {
-                    axisLabel: 'Message Length (chars)'
+                    axisLabel: 'Request Rate (req/s)'
                 },
                 yAxis: {
-                    axisLabel: 'Throughput (B)',
                     axisLabelDistance: 20
                 }
             }
@@ -32,7 +30,7 @@ angular.module('app', ['nvd3'])
             _(results)
                 .filter({
                     connections: $scope.model.connections,
-                    requestRate: $scope.model.requestRate,
+                    messageLength: $scope.model.messageLength,
                     delay: $scope.model.delay,
                     compression: $scope.model.compression,
                     keepAlive: $scope.model.keepAlive,
@@ -42,7 +40,7 @@ angular.module('app', ['nvd3'])
                 .forOwn(function (datapoints, image) {
                     datapoints = _.map(datapoints, function (datapoint) {
                         return {
-                            x: datapoint.messageLength,
+                            x: datapoint.requestRate,
                             y: datapoint[$scope.model.field]
                         };
                     });
@@ -65,21 +63,7 @@ angular.module('app', ['nvd3'])
                     });
                 });
 
-            xMin = Math.pow(10, Math.floor(Math.log10(xMin)));
-            xMax = Math.pow(10, Math.ceil(Math.log10(xMax)));
-
-            var xTicks = $scope.options.chart.xAxis.tickValues = [];
-            for (var i = Math.log10(xMin); i <= Math.log10(xMax); i++) {
-                xTicks.push(Math.pow(10, i));
-            }
-
-            if ($scope.model.field !== "requestsPerSec" ) {
-                $scope.options.chart.yScale = d3.scale.log();
-                $scope.options.chart.yDomain = [yMin, yMax];
-            } else {
-                $scope.options.chart.yScale = null;
-                $scope.options.chart.yDomain = [0, yMax];
-            }
+            $scope.options.chart.yDomain = [0, yMax];
 
             $scope.options.chart.yAxis.axisLabel = _.find($scope.fieldOptions, ['field', $scope.model.field]).label;
         };
@@ -91,10 +75,10 @@ angular.module('app', ['nvd3'])
                     $scope.model.urlError = false;
                     results = res.data;
                     $scope.connectionOptions = _(results).map('connections').uniq().sortBy().value();
-                    $scope.requestRateOptions = _(results).map('requestRate').uniq().sortBy().value();
+                    $scope.messageLengthOptions = _(results).map('messageLength').uniq().sortBy().value();
                     $scope.delayOptions = _(results).map('delay').uniq().sortBy().value();
                     $scope.model.connections = $scope.model.connections || $scope.connectionOptions[0];
-                    $scope.model.requestRate = $scope.model.requestRate || $scope.requestRateOptions[0];
+                    $scope.model.messageLength = $scope.model.messageLength || $scope.messageLengthOptions[0];
                     $scope.model.delay = $scope.model.delay || $scope.delayOptions[0];
                     drawChart();
                 })
@@ -116,12 +100,12 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
-        $scope.$watchGroup(["model.compression", "model.keepAlive", "model.ssl", "model.connections", "model.requestRate", "model.delay", "model.field"], function () {
+        $scope.$watchGroup(["model.compression", "model.keepAlive", "model.ssl", "model.connections", "model.messageLength", "model.delay", "model.field"], function () {
             $location.search("compression", $scope.model.compression ? "true" : "false");
             $location.search("keepAlive", $scope.model.keepAlive ? "true" : "false");
             $location.search("ssl", $scope.model.ssl ? "true" : "false");
             $location.search("connections", $scope.model.connections);
-            $location.search("requestRate", $scope.model.requestRate);
+            $location.search("messageLength", $scope.model.messageLength);
             $location.search("delay", $scope.model.delay);
             $location.search("field", $scope.model.field);
             if (results.length) drawChart();
@@ -135,7 +119,7 @@ angular.module('app', ['nvd3'])
             $scope.model.ssl = search.ssl === "true";
             $scope.model.url = search.url;
             $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];
-            $scope.model.requestRate = parseInt(search.requestRate) || $scope.requestRateOptions && $scope.requestRateOptions[0];
+            $scope.model.messageLength = parseInt(search.messageLength) || $scope.messageLengthOptions && $scope.messageLengthOptions[0];
             $scope.model.delay = parseInt(search.delay) || $scope.delayOptions && $scope.delayOptions[0];
             $scope.model.field = search.field || $scope.fieldOptions[0].field;
         });
