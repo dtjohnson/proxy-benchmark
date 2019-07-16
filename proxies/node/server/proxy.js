@@ -27,7 +27,7 @@ const stripHeaders = {};
 // modify the content at all.
 
 module.exports = opts => {
-    const agent = new http.Agent({ keepAlive: opts.keepAlive });
+    const agent = new http.Agent({ keepAlive: true });
 
     return (req, res) => {
         let useGzip = false;

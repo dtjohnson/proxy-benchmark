@@ -20,11 +20,6 @@ if (!process.env.UPSTREAM_PORT) {
     process.exit(1);
 }
 
-if (!process.env.UPSTREAM_KEEP_ALIVE) {
-    console.error("You must set the UPSTREAM_KEEP_ALIVE environmental variable");
-    process.exit(1);
-}
-
 const sslOptions = {
     key: fs.readFileSync(`${__dirname}/key.pem`),
     cert: fs.readFileSync(`${__dirname}/cert.pem`)
@@ -37,7 +32,6 @@ if (cluster.isMaster) {
     }
 } else {
     const p = proxy({
-        keepAlive: process.env.UPSTREAM_KEEP_ALIVE === "true",
         upstreamHost: process.env.UPSTREAM_HOST,
         upstreamPort: process.env.UPSTREAM_PORT
     });

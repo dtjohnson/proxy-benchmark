@@ -9,4 +9,4 @@ RUN npm install
 COPY server/ /usr/src/app/server
 
 CMD ["node", "server"]
-EXPOSE 80
+EXPOSE 80 443

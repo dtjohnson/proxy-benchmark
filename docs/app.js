@@ -2,7 +2,6 @@ angular.module('app', ['nvd3'])
     .controller('AppCtrl', function ($scope, $http, $location) {
         $scope.model = {
             compression: false,
-            keepAlive: true,
             ssl: false
         };
 
@@ -33,7 +32,6 @@ angular.module('app', ['nvd3'])
                     messageLength: $scope.model.messageLength,
                     delay: $scope.model.delay,
                     compression: $scope.model.compression,
-                    keepAlive: $scope.model.keepAlive,
                     ssl: $scope.model.ssl
                 })
                 .groupBy("image")
@@ -100,9 +98,8 @@ angular.module('app', ['nvd3'])
             fetchData();
         });
 
-        $scope.$watchGroup(["model.compression", "model.keepAlive", "model.ssl", "model.connections", "model.messageLength", "model.delay", "model.field"], function () {
+        $scope.$watchGroup(["model.compression", "model.ssl", "model.connections", "model.messageLength", "model.delay", "model.field"], function () {
             $location.search("compression", $scope.model.compression ? "true" : "false");
-            $location.search("keepAlive", $scope.model.keepAlive ? "true" : "false");
             $location.search("ssl", $scope.model.ssl ? "true" : "false");
             $location.search("connections", $scope.model.connections);
             $location.search("messageLength", $scope.model.messageLength);
@@ -115,7 +112,6 @@ angular.module('app', ['nvd3'])
             return $location.search();
         }, function (search) {
             $scope.model.compression = search.compression === "true";
-            $scope.model.keepAlive = search.keepAlive === "true";
             $scope.model.ssl = search.ssl === "true";
             $scope.model.url = search.url;
             $scope.model.connections = parseInt(search.connections) || $scope.connectionOptions && $scope.connectionOptions[0];

@@ -8,4 +8,4 @@ RUN chmod +x /startup.sh
 
 CMD ["/startup.sh"]
 
-EXPOSE 80
+EXPOSE 80 443

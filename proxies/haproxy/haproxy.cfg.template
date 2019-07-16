@@ -14,5 +14,4 @@ frontend http-in
     default_backend default-server
 
 backend default-server
-    $OPTION_HTTP_SERVER_CLOSE
     server s0 $UPSTREAM_HOST:$UPSTREAM_PORT

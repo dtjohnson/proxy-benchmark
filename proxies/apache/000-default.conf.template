@@ -1,6 +1,5 @@
 <VirtualHost *:80>
     ProxyPass / http://$UPSTREAM_HOST:$UPSTREAM_PORT/
-    $SET_NO_KEEP_ALIVE
 </VirtualHost>
 
 <VirtualHost *:443>
@@ -8,5 +7,4 @@
     SSLCertificateFile "/etc/ssl/cert.pem"
     SSLCertificateKeyFile "/etc/ssl/key.pem"
     ProxyPass / http://$UPSTREAM_HOST:$UPSTREAM_PORT/
-    $SET_NO_KEEP_ALIVE
 </VirtualHost>

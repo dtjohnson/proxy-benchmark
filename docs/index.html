@@ -45,11 +45,6 @@
                 <input type="checkbox" ng-model="model.ssl"> SSL
             </label>
         </div>
-        <div class="checkbox" ng-if="!model.urlError" style="margin-bottom: 10px;">
-            <label>
-                <input type="checkbox" ng-model="model.keepAlive"> Upstream Keep-Alive
-            </label>
-        </div>
         <div class="input-group" ng-if="!model.urlError">
             <div class="input-group-addon">Display</div>
             <select class="form-control" style="width: auto" ng-model="model.field" ng-options="option.field as option.label for option in fieldOptions"></select>
