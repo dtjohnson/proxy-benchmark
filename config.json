@@ -1,8 +1,8 @@
 {
   "region": "us-east-1",
-  "imageId": "ami-23ec3648",
+  "imageId": "ami-0f4c8cd1d622548cc",
   "instanceType": "r3.large",
-  "securityGroupId": "sg-6aa36a7c",
+  "securityGroupId": "sg-01fa13f4b5bd04fd9",
   "dockerImages": {
     "wrk": "dtjohnson/proxy-benchmark:wrk",
     "upstream": "dtjohnson/proxy-benchmark:upstream",
@@ -11,13 +11,12 @@
       "dtjohnson/proxy-benchmark:nginx",
       "dtjohnson/proxy-benchmark:apache",
       "dtjohnson/proxy-benchmark:node",
-      "dtjohnson/proxy-benchmark:node-http-proxy",
       "dtjohnson/proxy-benchmark:golang"
     ]
   },
-  "connections": [1, 10, 100, 1000],
+  "connections": [1, 10, 100, 200],
   "messageLengths": [1, 1000, 1000000],
-  "requestRates": [1, 10, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+  "requestRates": [1, 10, 100, 200, 300, 400, 500, 600, 700, 800],
   "delays": [0],
   "compressions": [false, true],
   "ssls": [false, true],
