@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "aws-sdk": "^2.5.6",
+    "aws-sdk": "^2.814.0",
     "bluebird": "^3.4.6",
     "lodash": "^4.15.0",
     "request": "^2.74.0",
